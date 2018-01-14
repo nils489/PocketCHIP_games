@@ -31,8 +31,6 @@ ball.image = ball_image
 bg = pygame.Surface(size)
 bg.fill(black)
 
-counter = 0
-
 while 1:
     for event in pygame.event.get():
         if event.type == pygame.QUIT: sys.exit()
@@ -43,12 +41,6 @@ while 1:
     if ball.rect.top < 0 or ball.rect.bottom > height:
         speed[1] = -speed[1]
 
-    #screen.fill(colors[counter%8])
-    #screen.fill(black)
-    #screen.blit(ball, ballrect)
-    #pygame.display.flip()
     ballgroup.clear(screen, bg)
     ballgroup.draw(screen)
-    pygame.display.flip()
-    counter += 1
-    #pygame.time.delay(240)
+    pygame.display.update()
